@@ -1,0 +1,23 @@
+@import '../../base.scss';
+.side-social-icons{
+  position: fixed;
+
+  display: none;
+  flex-direction: column;
+
+  bottom: 25px;
+  left: 25px;
+  color: white;
+
+  list-style: none;
+
+  font-size: 1.5rem;
+
+  @include breakpoint(tablet){
+    display: flex;
+
+  }
+  @include breakpoint(laptop){
+    left: 50px;
+  }
+}

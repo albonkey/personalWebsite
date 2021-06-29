@@ -1,0 +1,85 @@
+@import '../../base.scss';
+.about-me{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 50px 0;
+
+  color: white;
+
+  @include breakpoint(tablet){
+      padding: 50px 100px;
+  }
+}
+
+
+.hologram{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 950px;
+  padding: 15px;
+  margin: 200px 0;
+
+  text-align: justify;
+  line-height: 2rem;
+
+  @include breakpoint(tablet){
+      text-align: justify;
+  }
+
+}
+.hologram-upper{
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 0 15px;
+  border-bottom: 1px solid white;
+
+  @include breakpoint(laptop){
+    flex-wrap: nowrap;
+  }
+}
+.hologram-info{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-width: 350px;
+
+
+
+}
+.hologram-p{
+  margin-bottom: 25px;
+
+}
+.hologram-img{
+  display: flex;
+  flex-grow: 1;
+
+  max-width: 350px;
+}
+.hologram-technologies{
+  width: 100%;
+  padding: 15px;
+  margin-top: 25px;
+}
+.hologram-list{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(33%, 200px));
+
+  width: 100%;
+
+  list-style: none;
+
+  @include breakpoint(tablet){
+    display: flex;
+  }
+}
+.hologram-list-item{
+  margin: 15px 45px 0 0;
+}

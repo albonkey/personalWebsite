@@ -1,0 +1,28 @@
+@import '../../base.scss';
+
+.icon{
+  margin:10px 10px;
+  transition: .2s;
+  cursor: pointer;
+}
+.icon:hover{
+  color: RGB(160, 90, 0);
+}
+.social-media-icons{
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  margin: 10px 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 5px;
+
+}
+@media (min-width: 900px) {
+  .social-media-icons{
+
+  }
+
+}

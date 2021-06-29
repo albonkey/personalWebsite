@@ -1,0 +1,78 @@
+@import '../../base.scss';
+.project{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 80vh;
+  margin: 100px 0;
+
+  background-blend-mode: difference;
+
+}
+.project-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60vw;
+}
+.project-list{
+  display:flex;
+  justify-content: space-around;
+
+  width: 70%;
+
+
+  list-style: none;
+  color: white;
+}
+.project-list-item{
+  cursor: pointer;
+
+  padding: 20px 35px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.project-list-item-active{
+  color: orange;
+}
+.project-main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  width: 100%;
+
+  padding: 50px;
+
+
+  background-color: black;
+  text-align: center;
+  color: white;
+}
+.project-circle{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 350px;
+  width: 350px;
+  border-radius: 200px;
+  box-shadow: 0 0px 20px 1px rgb(42,42,42);
+  background-color: black;
+
+  text-align: center;
+  color: white;
+
+  transform: translate(-50%, 0);
+}
+.project-info{
+  max-width: 500px;
+  line-height: 2;
+}
+.project-title{
+  position: absolute;
+  font-size: 4rem;
+
+}

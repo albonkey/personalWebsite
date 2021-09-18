@@ -1,78 +1,98 @@
 @import '../../base.scss';
 .project{
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  height: 80vh;
-  margin: 100px 0;
+  width: 100vw;
+  height: 100vh;
 
-  background-blend-mode: difference;
+  background-color: $color2;
 
+  h2{
+    color: $color5;
+  }
 }
+
 .project-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 60vw;
-}
-.project-list{
-  display:flex;
-  justify-content: space-around;
-
-  width: 70%;
-
-
-  list-style: none;
-  color: white;
-}
-.project-list-item{
-  cursor: pointer;
-
-  padding: 20px 35px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-.project-list-item-active{
-  color: orange;
-}
-.project-main{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-sizing: border-box;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
 
   width: 100%;
+  padding: 50px 50px;
 
-  padding: 50px;
-
-
-  background-color: black;
-  text-align: center;
-  color: white;
+  @include breakpoint(tablet){
+    width: 60vw;
+  }
 }
-.project-circle{
-  position: relative;
+
+.project-images-container{
   display: flex;
   justify-content: center;
-  align-items: center;
+  transform-origin: center;
 
-  height: 350px;
-  width: 350px;
-  border-radius: 200px;
-  box-shadow: 0 0px 20px 1px rgb(42,42,42);
-  background-color: black;
 
-  text-align: center;
-  color: white;
 
-  transform: translate(-50%, 0);
+
+  .project-image{
+    display: none;
+    width: 100%;
+    margin: 0 25px;
+
+    cursor: pointer;
+    transform-origin: bottom;
+    filter: blur(0.2rem);
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0) 75%, rgba(0,0,0,0.2) );
+
+    transition: .4s;
+
+
+
+    @include breakpoint(tablet){
+      display: block;
+      width: 33%;
+
+
+      &:hover{
+        transform: scale(1.01);
+        transition: .4s;
+      }
+    }
+  }
+
+  .project-image-focus{
+    display: block;
+    filter: blur(0);
+    transform: scale(1.07);
+    transition: .4s;
+
+    &:first-child{
+      margin-left: calc(66.6% + 75px);
+    }
+    &:last-child{
+      margin-right: calc(66.6% + 75px);
+    }
+    @include breakpoint(tablet){
+      display: inherit;
+
+      &:hover{
+        transform: scale(1.08);
+        transition: .4s;
+      }
+    }
+  }
 }
 .project-info{
-  max-width: 500px;
+  width: 100%;
   line-height: 2;
-}
-.project-title{
-  position: absolute;
-  font-size: 4rem;
+  text-align: center;
 
+  @include breakpoint(tablet){
+    width: 60%;
+    min-width: 500px;
+  }
 }

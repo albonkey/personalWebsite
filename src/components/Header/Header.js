@@ -27,7 +27,7 @@ const Header = () => {
 		      <label htmlFor="btnControl" className='header-menu-btn'><FontAwesomeIcon icon={faBars} size='2x' /></label>
 				</div>
 				<nav className={(menu ? 'header-nav-active' : ' ') + ' header-nav' }>
-					<Link to='/home' className='header-nav-link' onClick={() => setMenu(false)}>
+					<Link to='/' className='header-nav-link' onClick={() => setMenu(false)}>
 						Home
 					</Link>
 					<Link to='/portfolio' className='header-nav-link' onClick={() => setMenu(false)}>
@@ -41,7 +41,9 @@ const Header = () => {
 					</Link>
 
 				</nav>
-				<button className={ 'header-button ' + (menu ? ' ' : 'header-button-disabled')} onClick={() => setMenu(false)}>Contact Me</button>
+				<Link to='/contact'>
+					<button className={ 'header-button ' + (menu ? ' ' : 'header-button-disabled')} onClick={() => setMenu(false)}>Contact Me</button>
+				</Link>
 		 </header>
 	 )
 }

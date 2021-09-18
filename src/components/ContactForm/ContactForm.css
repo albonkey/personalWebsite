@@ -1,0 +1,103 @@
+.contact-form-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: white;
+  border-radius: 3px;
+  max-width: 650px;
+  
+}
+.confirmation-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.confirmation-container p{
+  margin: 50px;
+}
+.contact-form{
+  width:100%;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+}
+.contact-form form{
+  width: 100%;
+}
+
+.button-form{
+  background-color: RGB(242,242,242);
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: 15px;
+  padding: 15px 30px;
+  transition: .2s;
+}
+.button-form:hover{
+  background-color: orange;
+}
+.input-box{
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 2px 5px 3px 5px;
+  margin: 15px 0;
+
+}
+.input-box label{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 90%;
+  font-size: 12px;
+  color:grey;
+}
+.input-box input{
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 14px;
+  line-height: 25px;
+  height: 20px;
+  outline: none;
+  border: 0px;
+  vertical-align: baseline;
+  padding: 0;
+}
+.input-box textarea{
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  height: 150px;
+  border: 1px solid RGB(242,242,242);
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.loader {
+  border: 5px solid RGB(242,242,242);
+  border-top: 5px solid RGB(52,52,52);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 900px){
+  .contact-form{
+    padding: 50px;
+  }
+}

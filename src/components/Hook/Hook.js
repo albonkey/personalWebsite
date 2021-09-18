@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './Hook.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import video from '../../assets/hook_bg.mp4'
+import video from '../../assets/hook_bg.mp4';
+import image from '../../assets/BG2.jpg';
 const Hook = () => {
 	const [arrow, setArrow] = useState(false);
 
@@ -19,9 +20,7 @@ const Hook = () => {
 	 return(
 		 <div className='hook'>
 		 		<FontAwesomeIcon className={'arrow-down'} icon={faAngleDown} size='2x' />
-				<video autoPlay muted loop className="bg-video">
-					<source src={video} type="video/mp4" />
-				</video>
+				<img  className='bg-image' src={image} />
 
 		 </div>
 	 )

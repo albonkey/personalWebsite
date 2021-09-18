@@ -1,0 +1,19 @@
+.picture-heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+}
+.picture-heading-image{
+
+}
+
+.picture-heading-text{
+  position: absolute;
+
+  font-size: 6em;
+  font-family: Oswald;
+  font-weight: bold;
+  color: white;
+}

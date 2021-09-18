@@ -1,0 +1,10 @@
+@import '../../base.scss';
+
+.testimonials{
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding: 100px 0;
+}

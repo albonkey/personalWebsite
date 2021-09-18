@@ -1,0 +1,69 @@
+.resume{
+  width: 100%;
+  max-width: 1200px;
+  margin: 150px auto;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.resume-header{
+  display: flex;
+  justify-content: space-between;
+}
+.resume-header h3{
+  font-size: 3rem;
+}
+.resume-header div{
+  font-size: 1.5rem;
+}
+.resume-header .contact-info{
+  font-size: 1rem;
+  line-height: 2;
+  list-style: none;
+}
+.section-heading{
+  padding: 5px 0;
+  margin: 15px 0;
+  font-size: 2rem;
+  border-bottom: 1px solid black;
+}
+.section-info{
+  display: flex;
+  justify-content: space-between;
+}
+.section-info-article{
+  width: 50%;
+}
+.section-info ul{
+    list-style: none;
+}
+.section-info-article:last-child{
+  text-align: right;
+  width: 50%;
+}
+.section-inner-heading{
+  padding: 5px 0;
+  font-size: 1.2rem;
+}
+.section-paragraph{
+  line-height: 1.5;
+
+}
+.resume-interests .section-info{
+  flex-wrap: wrap;
+}
+.resume-interests .section-info-article{
+  width: 100%;
+  text-align: left;
+
+}
+@media (min-width:900px){
+  .resume{
+    padding: 75px;
+    
+  }
+  .resume-interests .section-info-article{
+      width: 30%;
+  }
+}

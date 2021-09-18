@@ -1,29 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Project.scss';
-
+import {projects} from './project_info';
 const Project = () => {
+	const [project, setProject] = useState(1);
+
+	const project_images = projects.map(_project => require('../../assets/' + _project.image).default);
+
+
+
 	 return(
 		 <section className='project'>
+		 	<h2 className='heading2'>PROJECTS</h2>
 		 	<div className='project-container'>
-				<ul className='project-list'>
-					<li className='project-list-item-active project-list-item'>The Uprising FC</li>
-					<li className='project-list-item'>TeamFine</li>
-					<li className='project-list-item'>Coaching App</li>
-				</ul>
-				<div className='project-main'>
-					<div className='project-info'>
-						<h3>
-							Project built for The Uprising FC.
-						</h3>
-						<p>
-							Created a website for The Uprising FC which is an organization looking to provide affordable soccer
-							practices for everyone in the Los Angeles area. It was cool being able to contribute in a project on
-							a subject I have great passion for. I learned a lot about working together with a client to provide
-							the product they wanted.
-						</p>
-					</div>
-				</div>
+				<div className='project-images-container'>
 
+					<img className={'project-image' + (project === 0 ? ' project-image-focus' : ' ')} src={project_images[0]} onClick={() => setProject(0)} />
+					<img className={'project-image' + (project === 1 ? ' project-image-focus' : ' ')} src={project_images[1]} onClick={() => setProject(1)}/>
+					<img className={'project-image' + (project === 2 ? ' project-image-focus' : ' ')} src={project_images[2]} onClick={() => setProject(2)}/>
+				</div>
+				<h3 className='heading2'>{projects[project].name}</h3>
+				<p className='project-info'>
+					{projects[project].info}
+				</p>
+				<button className='button-primary'>
+					View Project
+				</button>
 			</div>
 		 </section>
 	 )

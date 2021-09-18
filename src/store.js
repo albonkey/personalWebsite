@@ -1,8 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-const userInfo = Cookie.getJSON('userInfo') || null;
-const teamInfo = Cookie.getJSON('teamInfo') || null;
 
 const initialState = {};
 

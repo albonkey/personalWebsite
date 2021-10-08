@@ -2,7 +2,7 @@ import React from 'react';
 import './ResumePage.scss';
 import Resume from '../../components/Resume/Resume';
 import PictureHeading from '../../components/PictureHeading/PictureHeading';
-import heading_image from '../../assets/header2.png';
+import heading_image from '../../assets/header3.jpg';
 
 const ResumePage = () => {
 	 return(

@@ -10,6 +10,17 @@
       "StackName": "amplify-personalwebsite-dev-200456",
       "StackId": "arn:aws:cloudformation:us-west-2:658631780016:stack/amplify-personalwebsite-dev-200456/379d8db0-182d-11ec-9580-020ba035f82f",
       "AmplifyAppId": "d5yrn3cvu8q8a"
+    },
+    "categories": {
+      "auth": {
+        "personalwebsitef0c5cf44": {}
+      },
+      "function": {
+        "contactEmail": {
+          "deploymentBucketName": "amplify-personalwebsite-dev-200456-deployment",
+          "s3Key": "amplify-builds/contactEmail-73397271664469626363-build.zip"
+        }
+      }
     }
   }
 }

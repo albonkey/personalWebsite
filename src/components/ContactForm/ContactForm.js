@@ -1,6 +1,11 @@
 import React, {useState} from 'react';
 import './ContactForm.css';
-import axios from 'axios';
+import Amplify, { API } from 'aws-amplify';
+import awsconfig from '../../aws-exports';
+
+Amplify.configure(awsconfig);
+API.configure(awsconfig);
+
 
 const ContactForm = () => {
   const [emailConfirmed, setEmailConfirmed] = useState(false);
@@ -15,23 +20,17 @@ const ContactForm = () => {
 
       setLoading(true);
       try {
-        const {data} = await axios({
-          method: 'post',
-          url: '/api/send',
-          baseURL: `${window.apiAddress}`,
-          data: {
+
+        const {data} = await API.post('contactAPI', '/contact', {
+          body: {
             name: name,
             email: email,
             subject: subject,
             message: message
-          },
-          headers: {
-            'Accept': 'application/json',
-            'Access-Control-Allow-Origin': '*'
           }
         });
 
-
+        console.log(data);
 
         setLoading(false);
         setEmailConfirmed(true);
@@ -75,8 +74,6 @@ const ContactForm = () => {
           </form>
         </div>
       }
-
-
 
     </div>
   )

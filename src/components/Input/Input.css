@@ -1,0 +1,38 @@
+.input-box{
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgb(7, 18, 51);
+  border-radius: 3px;
+  padding: 2px 5px 3px 5px;
+  margin: 15px 0;
+  background-color: RGB(255,255,255,0.2);
+}
+
+.input-box label{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 90%;
+  font-size: 12px;
+}
+.input-box input{
+  background-color: transparent;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 25px;
+  height: 20px;
+  outline: none;
+  border: 0px;
+  vertical-align: baseline;
+  padding: 15px 0;
+}
+.input-box textarea{
+  background-color: transparent;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  height: 150px;
+  margin-top: 5px;
+  padding: 5px;
+}

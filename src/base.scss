@@ -1,8 +1,9 @@
-$color1: white;
-$color2: rgb(242,242,242);
-$color3: orange;
-$color4: rgb(5,5,5);
-$color5: rgb(52,52,52);
+$primary: white;
+$primary2: rgb(242,242,242);
+$contrast: rgb(7,7,7);
+$contrast2: rgb(52,52,52);
+$detail: orange;
+
 
 
 $page-padding: 200px;
@@ -12,14 +13,14 @@ $page-padding: 200px;
   padding: 15px 45px;
   border: none;
   border-radius: 3px;
-  background-color: $color3;
+  background-color: $detail;
 
   font-size: 1.2rem;
 
   cursor: pointer;
 
   &:hover{
-    color: $color1;
+    color: $primary;
   }
 }
 

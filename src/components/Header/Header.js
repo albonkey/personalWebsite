@@ -5,9 +5,16 @@ import logo from '../../assets/logo_white.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-const Header = () => {
+const Header = (props) => {
 	const [menu, setMenu] = useState(false);
 	const [scrolledDown, setScrolledDown] = useState(false);
+	const { pathname } = props.location;
+
+	let show = true;
+	 if(pathname.includes("/admin")) {
+		 show = false;
+
+	 }
 
   const changeBackground = () => {
     if(window.scrollY >= 100){
@@ -19,7 +26,7 @@ const Header = () => {
   }
   window.addEventListener('scroll', changeBackground);
 	 return(
-
+		 show &&
 		 <header className={ 'header' + (scrolledDown ? ' header-active' : '')}>
 		 		<div className='header-logo-container'>
 					<img src={logo} className='header-logo' />

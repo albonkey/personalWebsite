@@ -5,9 +5,11 @@
   align-items: center;
   flex-direction: column;
 
+  width: 100vw;
   padding: 50px 0;
 
-
+  background-color: $primary;
+  color: $contrast;
   @include breakpoint(tablet){
       padding: 50px 100px;
   }

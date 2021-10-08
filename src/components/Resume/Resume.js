@@ -55,9 +55,28 @@ const Resume = () => {
         <h4 className='section-heading'>Work Experience</h4>
         <div className='section-info'>
           <div className='section-info-article'>
+            <h5 className='section-inner-heading'>MIDMARK CORP.</h5>
+            <p className='section-paragraph'>
+              Work included automating builds of .Net, Typescript and C applications including running unit tests,
+              performing static code analysis when applicable and automating Installshield package creation.
+              In addition, I created dashboards to visualize status of builds.
+            </p>
+          </div>
+          <div className='section-info-article'>
+            <h5 className='section-inner-heading'>Co- Op Software Engineer</h5>
+            <p className='section-paragraph'>
+              <ul>
+                <li>Summer 2021 </li>
+                <li>Torrance, California</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div className='section-info'>
+          <div className='section-info-article'>
             <h5 className='section-inner-heading'>STANSEFABRIKKEN AS</h5>
             <p className='section-paragraph'>
-              Worked on producing different kinds of
+              Produced different kinds of
               electronical devices that were used in tunnels
               and homes to regulate electricity. Came up with
               methods to streamline the production workflow.
@@ -73,24 +92,7 @@ const Resume = () => {
             </p>
           </div>
         </div>
-        <div className='section-info'>
-          <div className='section-info-article'>
-            <h5 className='section-inner-heading'>POSTEN AS</h5>
-            <p className='section-paragraph'>
-              Would deliver packages and interact with
-              companies and personal clients.
-            </p>
-          </div>
-          <div className='section-info-article'>
-            <h5 className='section-inner-heading'>MAIL/ PACKAGE DELIVERY</h5>
-            <p className='section-paragraph'>
-              <ul>
-                <li>April 2017 - January 2018 </li>
-                <li>Larvik, Norway</li>
-              </ul>
-            </p>
-          </div>
-        </div>
+
       </div>
       <div className='resume-skills'>
         <h4 className='section-heading'>Skills</h4>

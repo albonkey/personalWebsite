@@ -3,19 +3,27 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: white;
-  border-radius: 3px;
+  background: rgba(255,255,255,.30);
+  backdrop-filter: blur(5px) brightness(95%);
+
+  color: white;
+  border-radius: 5px;
   max-width: 650px;
-  
+
+
 }
+input:-webkit-autofill, input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
 .confirmation-container{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 50px;
 }
 .confirmation-container p{
-  margin: 50px;
+  margin-top: 25px; 
 }
 .contact-form{
   width:100%;
@@ -55,7 +63,7 @@
   display: inline-block;
   width: 90%;
   font-size: 12px;
-  color:grey;
+  color:white;
 }
 .input-box input{
   box-sizing: border-box;
@@ -67,6 +75,7 @@
   border: 0px;
   vertical-align: baseline;
   padding: 0;
+  color: white;
 }
 .input-box textarea{
   box-sizing: border-box;
@@ -77,6 +86,7 @@
   border: 1px solid RGB(242,242,242);
   margin-top: 5px;
   padding: 5px;
+  color: white;
 }
 
 .loader {

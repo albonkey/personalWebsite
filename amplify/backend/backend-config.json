@@ -36,6 +36,20 @@
           ]
         }
       ]
+    },
+    "emailAPI": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "emailAPI",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "storage": {
@@ -46,6 +60,11 @@
   },
   "function": {
     "contactEmail": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "emailAPI": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"

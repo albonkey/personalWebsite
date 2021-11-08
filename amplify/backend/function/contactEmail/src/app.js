@@ -6,14 +6,14 @@ or in the "license" file accompanying this file. This file is distributed on an 
 See the License for the specific language governing permissions and limitations under the License.
 */
 
-var express = require('express')
-var bodyParser = require('body-parser')
-var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-var AWS = require('aws-sdk')
+const express = require('express')
+const bodyParser = require('body-parser')
+const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+const AWS = require('aws-sdk')
 
 const config = {
-  accessKeyId: 'AKIAZSWMDM2YH44ATI6F',
-  secretAccessKey: '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',
+  accessKeyId: 'AKIAZSWMDM2YPLRRVAGS',
+  secretAccessKey: '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',
   region: 'us-west-2',
   adminEmail: 'carl_solli@hotmail.com'
 }
@@ -32,31 +32,41 @@ app.use(function(req, res, next) {
 
 const emailHandler = (req, res) => {
   const { name, email, subject, message } = req;
-  ses.sendEmail({
+  const charset = "UTF-8";
+  const body_html = `<html>
+  <head></head>
+  <body>
+    <h1>Amazon SES Test (SDK for JavaScript in Node.js)</h1>
+    <p>This email was sent with
+      <a href='https://aws.amazon.com/ses/'>Amazon SES</a> using the
+      <a href='https://aws.amazon.com/sdk-for-node-js/'>
+        AWS SDK for JavaScript in Node.js</a>.</p>
+  </body>
+  </html>`;
+
+  var params = {
     Source: config.adminEmail,
-    ReturnPath: config.adminEmail,
-    Destination: {
-      ToAddresses: [config.adminEmail]
-    },
-    Message: {
-      Subject: {
-        Data: 'Thanks for contacting me.'
+      Destination: {
+        ToAddresses: [
+          'csolli@calstatela.edu'
+        ],
       },
-      Body: {
-        Html: {
+      ReplyToAddresses: [],
+      Message: {
+        Body: {
+          Html: {
+            Charset: 'UTF-8',
+            Data: 'This is the body of my email!',
+          },
+        },
+        Subject: {
           Charset: 'UTF-8',
-          Data: '<h3>Hello</h3>'
+          Data: `Hello, Carl!`,
         }
-      }
-    }
-  }, (err, data) => {
-    if (err){
-      return res.status(500).json({error: err})
-    }
-    return res.json({
-      message: "Email sent!"
-    })
-  })
+      },
+    };
+
+  return ses.sendEmail(params).promise()
 }
 app.post('/contact', emailHandler);
 

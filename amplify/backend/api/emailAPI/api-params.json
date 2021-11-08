@@ -2,18 +2,18 @@
     "paths": [
         {
             "name": "/contact",
-            "lambdaFunction": "contactEmail",
+            "lambdaFunction": "emailAPI",
             "privacy": {
                 "open": true
             },
             "policyResourceName": "/contact"
         }
     ],
-    "resourceName": "contactAPI",
-    "apiName": "contactAPI",
+    "resourceName": "emailAPI",
+    "apiName": "emailAPI",
     "functionArns": [
         {
-            "lambdaFunction": "contactEmail"
+            "lambdaFunction": "emailAPI"
         }
     ],
     "privacy": {
@@ -25,7 +25,7 @@
     "dependsOn": [
         {
             "category": "function",
-            "resourceName": "contactEmail",
+            "resourceName": "emailAPI",
             "attributes": [
                 "Name",
                 "Arn"

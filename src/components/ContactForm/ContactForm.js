@@ -21,7 +21,7 @@ const ContactForm = () => {
       setLoading(true);
       try {
 
-        const {data} = await API.post('contactAPI', '/contact', {
+        const {data} = await API.post('emailAPI', '/contact', {
           body: {
             name: name,
             email: email,
@@ -29,7 +29,6 @@ const ContactForm = () => {
             message: message
           }
         });
-
         console.log(data);
 
         setLoading(false);
@@ -48,7 +47,7 @@ const ContactForm = () => {
         emailConfirmed
         ? <div className='confirmation-container'>
             <h1>Thanks for reaching out!</h1>
-            <p>I will get back to you as soon as possible.</p>
+            <p>I will get back to you on {email} as soon as possible.</p>
           </div>
         :
         <div className='contact-form'>

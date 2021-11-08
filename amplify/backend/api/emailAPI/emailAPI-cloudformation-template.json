@@ -14,15 +14,15 @@
         },
     
     
-          "functioncontactEmailName": {
+          "functionemailAPIName": {
             "Type": "String",
-            "Default": "functioncontactEmailName"
+            "Default": "functionemailAPIName"
           },
         
           
-          "functioncontactEmailArn": {
+          "functionemailAPIArn": {
             "Type": "String",
-            "Default": "functioncontactEmailArn"
+            "Default": "functionemailAPIArn"
           }
         
           
@@ -45,16 +45,16 @@
         
         
         
-      "contactAPI": {
+      "emailAPI": {
         "Type": "AWS::ApiGateway::RestApi",
         "Properties": {
           "Description": "",
-          "Name": "contactAPI",
+          "Name": "emailAPI",
           "Body": {
             "swagger": "2.0",
             "info": {
               "version": "2018-05-24T17:52:00Z",
-              "title": "contactAPI"
+              "title": "emailAPI"
             },
             "host": {
                 "Fn::Join": [
@@ -176,7 +176,7 @@
                             
                             {
                                 
-                                "Ref": "functioncontactEmailArn"
+                                "Ref": "functionemailAPIArn"
                             },
                             
                             "/invocations"
@@ -275,7 +275,7 @@
                           
                           {
                             
-                            "Ref": "functioncontactEmailArn"
+                            "Ref": "functionemailAPIArn"
                           },
                           
                           "/invocations"
@@ -332,12 +332,12 @@
                   
         
         
-        "functioncontactEmailPermissioncontactAPI": {
+        "functionemailAPIPermissionemailAPI": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
                     {
-                        "Ref":  "functioncontactEmailName"
+                        "Ref":  "functionemailAPIName"
                     },
                     
                     "Action": "lambda:InvokeFunction",
@@ -356,7 +356,7 @@
                             },
                             ":",
                             {
-                                "Ref": "contactAPI"
+                                "Ref": "emailAPI"
                             },
                             "/*/*/*"
                         ]
@@ -367,7 +367,7 @@
         
         
         
-      "DeploymentAPIGWcontactAPI": {
+      "DeploymentAPIGWemailAPI": {
         "Type": "AWS::ApiGateway::Deployment",
         "Properties": {
           "Description": "The Development stage deployment of your API.",
@@ -381,7 +381,7 @@
             ]
           },
           "RestApiId": {
-            "Ref": "contactAPI"
+            "Ref": "emailAPI"
           }
         }
       }
@@ -389,15 +389,15 @@
     "Outputs": {
         "RootUrl": {
             "Description": "Root URL of the API gateway",
-            "Value": {"Fn::Join": ["", ["https://", {"Ref": "contactAPI"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
+            "Value": {"Fn::Join": ["", ["https://", {"Ref": "emailAPI"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
         },
         "ApiName": {
           "Description": "API Friendly name",
-          "Value": "contactAPI"
+          "Value": "emailAPI"
         },
         "ApiId": {
           "Description": "API ID (prefix of API URL)",
-          "Value": {"Ref": "contactAPI"}
+          "Value": {"Ref": "emailAPI"}
         }
     }
   }

@@ -1,3 +1,13 @@
-  .portfolio-page{
-  padding-bottom: 500px;
+.portfolio-page{
+
+}
+
+.projects-container{
+  padding: 0;
+}
+
+@media (min-width: 900px){
+  .projects-container{
+    padding: 200px
+  }
 }

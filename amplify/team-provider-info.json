@@ -22,7 +22,7 @@
         },
         "emailAPI": {
           "deploymentBucketName": "amplify-personalwebsite-dev-200456-deployment",
-          "s3Key": "amplify-builds/emailAPI-3137445062305a763546-build.zip"
+          "s3Key": "amplify-builds/emailAPI-6e424e72516f47786351-build.zip"
         }
       }
     }

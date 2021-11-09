@@ -14,9 +14,9 @@ const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 const AWS = require('aws-sdk')
 const config = {
-  accessKeyId: 'AKIAZSWMDM2YPLRRVAGS',
-  secretAccessKey: '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',
-  region: 'us-west-2',
+  accessKeyId: process.env.ACCESS_KEY,
+  secretAccessKey: process.env.SECRET_ACCESS_KEY,
+  region: process.env.REGION,
   adminEmail: 'carl_solli@hotmail.com'
 }
 
@@ -72,9 +72,7 @@ app.use(function(req, res, next) {
      }
 
      res.json({
-       message: "Order processed",
-       subject: subject,
-       m: message
+       message: "Contact Succesfull!",
      })
    })
  }

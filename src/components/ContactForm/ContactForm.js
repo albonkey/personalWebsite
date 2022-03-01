@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import './ContactForm.css';
 import Amplify, { API } from 'aws-amplify';
 import awsconfig from '../../aws-exports';
+import AWS from 'aws-sdk'
 
 Amplify.configure(awsconfig);
-API.configure(awsconfig);
 
+const ses = new AWS.SES(awsconfig);
 
 const ContactForm = () => {
   const [emailConfirmed, setEmailConfirmed] = useState(false);
@@ -19,25 +20,19 @@ const ContactForm = () => {
       e.preventDefault();
 
       setLoading(true);
-      try {
 
-        const {data} = await API.post('emailAPI', '/contact', {
-          body: {
-            name: name,
-            email: email,
-            subject: subject,
-            message: message
-          }
-        });
-        console.log(data);
-
-        setLoading(false);
-        setEmailConfirmed(true);
-
-      } catch(err){
-        console.log(err);
+      const parameters = {
+        body: {
+          name,
+          email,
+          subject,
+          message
+        }
       }
-    }
+      const data = await API.post('personalWebsiteAPI', '/sendEmail', parameters);
+
+      setLoading(false);
+}
 
   return(
     <div className='contact-form-container'>

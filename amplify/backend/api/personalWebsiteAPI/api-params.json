@@ -1,19 +1,19 @@
 {
     "paths": [
         {
-            "name": "/contact",
-            "lambdaFunction": "emailAPI",
+            "name": "/sendEmail",
+            "lambdaFunction": "sendEmail",
             "privacy": {
                 "open": true
             },
-            "policyResourceName": "/contact"
+            "policyResourceName": "/sendEmail"
         }
     ],
-    "resourceName": "emailAPI",
-    "apiName": "emailAPI",
+    "resourceName": "personalWebsiteAPI",
+    "apiName": "personalWebsiteAPI",
     "functionArns": [
         {
-            "lambdaFunction": "emailAPI"
+            "lambdaFunction": "sendEmail"
         }
     ],
     "privacy": {
@@ -25,7 +25,7 @@
     "dependsOn": [
         {
             "category": "function",
-            "resourceName": "emailAPI",
+            "resourceName": "sendEmail",
             "attributes": [
                 "Name",
                 "Arn"

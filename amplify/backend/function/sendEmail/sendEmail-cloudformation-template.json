@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "contactEmail",
+            "sendEmail",
             {
               "Fn::Join": [
                 "",
                 [
-                  "contactEmail",
+                  "sendEmail",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "personalwebsiteLambdaRole0af6c79d",
+            "personalwebsiteLambdaRolea533e591",
             {
               "Fn::Join": [
                 "",
                 [
-                  "personalwebsiteLambdaRole0af6c79d",
+                  "personalwebsiteLambdaRolea533e591",
                   "-",
                   {
                     "Ref": "env"

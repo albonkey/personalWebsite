@@ -12,17 +12,18 @@
       "AmplifyAppId": "d5yrn3cvu8q8a"
     },
     "categories": {
-      "auth": {
-        "personalwebsitef0c5cf44": {}
-      },
       "function": {
         "contactEmail": {
           "deploymentBucketName": "amplify-personalwebsite-dev-200456-deployment",
-          "s3Key": "amplify-builds/contactEmail-4b676a7643747a522b7a-build.zip"
+          "s3Key": "amplify-builds/contactEmail-715a334a714b324d4b6c-build.zip"
         },
         "emailAPI": {
           "deploymentBucketName": "amplify-personalwebsite-dev-200456-deployment",
-          "s3Key": "amplify-builds/emailAPI-6e424e72516f47786351-build.zip"
+          "s3Key": "amplify-builds/emailAPI-6e4d75656c374769706a-build.zip"
+        },
+        "sendEmail": {
+          "deploymentBucketName": "amplify-personalwebsite-dev-200456-deployment",
+          "s3Key": "amplify-builds/sendEmail-375a4e2b796d754b4a74-build.zip"
         }
       }
     }

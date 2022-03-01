@@ -14,15 +14,15 @@
         },
     
     
-          "functioncontactEmailName": {
+          "functionsendEmailName": {
             "Type": "String",
-            "Default": "functioncontactEmailName"
+            "Default": "functionsendEmailName"
           },
         
           
-          "functioncontactEmailArn": {
+          "functionsendEmailArn": {
             "Type": "String",
-            "Default": "functioncontactEmailArn"
+            "Default": "functionsendEmailArn"
           }
         
           
@@ -45,16 +45,16 @@
         
         
         
-      "contactAPI": {
+      "personalWebsiteAPI": {
         "Type": "AWS::ApiGateway::RestApi",
         "Properties": {
           "Description": "",
-          "Name": "contactAPI",
+          "Name": "personalWebsiteAPI",
           "Body": {
             "swagger": "2.0",
             "info": {
               "version": "2018-05-24T17:52:00Z",
-              "title": "contactAPI"
+              "title": "personalWebsiteAPI"
             },
             "host": {
                 "Fn::Join": [
@@ -90,7 +90,7 @@
             ],
             "paths": {
               
-              "/contact": {
+              "/sendEmail": {
                 "options": {
                   "consumes": [
                     "application/json"
@@ -176,7 +176,7 @@
                             
                             {
                                 
-                                "Ref": "functioncontactEmailArn"
+                                "Ref": "functionsendEmailArn"
                             },
                             
                             "/invocations"
@@ -189,7 +189,7 @@
                   }
                 }
               },
-              "/contact/{proxy+}": {
+              "/sendEmail/{proxy+}": {
                 "options": {
                   "consumes": [
                     "application/json"
@@ -275,7 +275,7 @@
                           
                           {
                             
-                            "Ref": "functioncontactEmailArn"
+                            "Ref": "functionsendEmailArn"
                           },
                           
                           "/invocations"
@@ -332,12 +332,12 @@
                   
         
         
-        "functioncontactEmailPermissioncontactAPI": {
+        "functionsendEmailPermissionpersonalWebsiteAPI": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
                     {
-                        "Ref":  "functioncontactEmailName"
+                        "Ref":  "functionsendEmailName"
                     },
                     
                     "Action": "lambda:InvokeFunction",
@@ -356,7 +356,7 @@
                             },
                             ":",
                             {
-                                "Ref": "contactAPI"
+                                "Ref": "personalWebsiteAPI"
                             },
                             "/*/*/*"
                         ]
@@ -367,7 +367,7 @@
         
         
         
-      "DeploymentAPIGWcontactAPI": {
+      "DeploymentAPIGWpersonalWebsiteAPI": {
         "Type": "AWS::ApiGateway::Deployment",
         "Properties": {
           "Description": "The Development stage deployment of your API.",
@@ -381,7 +381,7 @@
             ]
           },
           "RestApiId": {
-            "Ref": "contactAPI"
+            "Ref": "personalWebsiteAPI"
           }
         }
       }
@@ -389,15 +389,15 @@
     "Outputs": {
         "RootUrl": {
             "Description": "Root URL of the API gateway",
-            "Value": {"Fn::Join": ["", ["https://", {"Ref": "contactAPI"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
+            "Value": {"Fn::Join": ["", ["https://", {"Ref": "personalWebsiteAPI"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
         },
         "ApiName": {
           "Description": "API Friendly name",
-          "Value": "contactAPI"
+          "Value": "personalWebsiteAPI"
         },
         "ApiId": {
           "Description": "API ID (prefix of API URL)",
-          "Value": {"Ref": "contactAPI"}
+          "Value": {"Ref": "personalWebsiteAPI"}
         }
     }
   }

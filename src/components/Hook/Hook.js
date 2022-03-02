@@ -24,10 +24,7 @@ const Hook = () => {
 
 	 return(
 		 <div className='hook'>
-		 		<PlayButton action={''}/>
 		 		<FontAwesomeIcon className={'arrow-down'} icon={faAngleDown} size='2x' />
-
-
 
 		 </div>
 	 )

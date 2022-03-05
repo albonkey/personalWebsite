@@ -29,7 +29,7 @@ const Header = (props) => {
 		 show &&
 		 <header className={ 'header' + (scrolledDown ? ' header-active' : '')}>
 		 		<div className='header-logo-container'>
-					<img src={logo} className='header-logo' />
+					<img src={logo} className='header-logo' alt='logo' />
 					<input type="checkbox" id="btnControl" onClick={() => setMenu(!menu)}/>
 		      <label htmlFor="btnControl" className='header-menu-btn'><FontAwesomeIcon icon={faBars} size='2x' /></label>
 				</div>

@@ -7,8 +7,14 @@ import ShopPage from './pages/ShopPage/ShopPage';
 import Header  from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import ContactPage from './pages/ContactPage/ContactPage';
-import AdminPage from './pages/AdminPage/AdminPage';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
+//Configuring Amplify
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
+
 function App() {
   return (
 
@@ -17,7 +23,6 @@ function App() {
       <Route path='/' component={Header} />
         <Switch>
           <Route exact path='/' component={Homepage} />
-          <Route path='/admin' component={AdminPage} />
           <Route path='/portfolio' component={PortfolioPage} />
           <Route path='/resume' component={ResumePage} />
           <Route path='/shop' component={ShopPage} />

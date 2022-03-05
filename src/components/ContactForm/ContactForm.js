@@ -1,15 +1,10 @@
 import React, {useState} from 'react';
 import './ContactForm.css';
-import Amplify, { API } from 'aws-amplify';
-import awsconfig from '../../aws-exports';
-import AWS from 'aws-sdk'
+import { API } from 'aws-amplify';
 
-Amplify.configure(awsconfig);
-
-const ses = new AWS.SES(awsconfig);
 
 const ContactForm = () => {
-  const [emailConfirmed, setEmailConfirmed] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -20,16 +15,23 @@ const ContactForm = () => {
       e.preventDefault();
 
       setLoading(true);
+      try {
 
-      const parameters = {
-        body: {
-          name,
-          email,
-          subject,
-          message
+        const parameters = {
+          body: {
+            name,
+            email,
+            subject,
+            message
+          }
         }
+
+        await API.post('personalWebsiteAPI', '/sendEmail', parameters);
+        setStatusMessage(`Thanks for contacting me! I'll get back to you as soon as possible.`);
+
+      } catch(error){
+        setStatusMessage(`Something went wrong! Please try again later.`)
       }
-      const data = await API.post('personalWebsiteAPI', '/sendEmail', parameters);
 
       setLoading(false);
 }
@@ -39,10 +41,10 @@ const ContactForm = () => {
       {loading ?
         <div className='loader'></div>
         :
-        emailConfirmed
+        statusMessage
         ? <div className='confirmation-container'>
             <h1>Thanks for reaching out!</h1>
-            <p>I will get back to you on {email} as soon as possible.</p>
+            <p>{statusMessage}</p>
           </div>
         :
         <div className='contact-form'>

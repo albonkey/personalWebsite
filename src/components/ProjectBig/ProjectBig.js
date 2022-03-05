@@ -4,7 +4,7 @@ import './ProjectBig.scss';
 const ProjectBig = ({img, title, description, techList, links}) => {
   return(
     <div className='projectBig'>
-      <img src={require(`../../assets/${img}`).default} />
+      <img src={require(`../../assets/${img}`).default} alt={title}/>
       <div className='projectBig-info'>
         <h2>{title}</h2>
         <p>

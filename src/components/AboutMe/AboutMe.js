@@ -20,7 +20,7 @@ const AboutMe = () => {
 							</p>
 
 						</div>
-						<img src={aboutme} className='hologram-img'/>
+						<img src={aboutme} className='hologram-img' alt='Portrait of Carl'/>
 					</div>
 					<div className='hologram-technologies'>
 						<h3>

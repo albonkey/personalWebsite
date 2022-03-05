@@ -18,7 +18,6 @@ const Resume = () => {
         </div>
       </div>
       <div className='resume-summary'>
-        <h4 className='section-heading'></h4>
         <p className='section-paragraph'>
           I will be graduating from California State University of Los Angeles Spring 2022.
           I have previous work experience in other fields than tech. I’m a student-athlete and compete in soccer for the university.

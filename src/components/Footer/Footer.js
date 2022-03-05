@@ -16,6 +16,7 @@ const Footer = (props) => {
     show &&
     <footer className='footer'>
       <div className='footer-heading'>Let's Create Something Together</div>
+      <SocialMediaIcons />
     </footer>
   )
 }

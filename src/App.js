@@ -8,12 +8,17 @@ import Header  from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import ContactPage from './pages/ContactPage/ContactPage';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import lozad from 'lozad';
 
-//Configuring Amplify
+//Initalizing Amplify
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
-
 Amplify.configure(awsconfig);
+
+//Initalizing lozad
+const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+
 
 function App() {
   return (

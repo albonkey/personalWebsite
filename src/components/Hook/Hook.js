@@ -18,13 +18,15 @@ const Hook = () => {
       setArrow(true)
     }
   }
-	
+	const focusBio = () => {
+
+	}
   window.addEventListener('scroll', displayArrow);
 	 return(
-		 <div className='hook'>
+		 <div className='hook lozad' data-background-image='../../assets/BG2.jpg'>
 		 	{
 				arrow &&
-				<FontAwesomeIcon className={'arrow-down'} icon={faAngleDown} size='2x' />
+				<FontAwesomeIcon className={'arrow-down'} icon={faAngleDown} size='2x'/>
 			}
 		 			<SideSocialIcons />
 		 </div>
